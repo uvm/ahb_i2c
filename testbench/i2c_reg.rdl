@@ -1,0 +1,166 @@
+addrmap reg_block {
+  littleendian;
+
+  reg {
+    name = "PRERlo_h";
+    regwidth = 8;
+    field {
+      name = "F";
+      hw = r;
+      sw = rw;
+      reset = 0xff;
+    } F[7:0]; 
+  } PRERlo_h @0x0;
+
+  reg {
+    name = "PRERhi_h";
+    regwidth = 8;
+    field {
+      name = "F";
+      hw = r;
+      sw = rw;
+      reset = 0xff;
+    } F[7:0]; 
+  } PRERhi_h @0x1;
+
+  reg {
+    name = "CTR_h";
+    regwidth = 8;
+    field {
+      name = "EN";
+      hw = r;
+      sw = rw;
+      reset = 0;
+    } EN[7:7]; 
+    field {
+      name = "IEN";
+      hw = r;
+      sw = rw;
+      reset = 0;
+    } IEN[6:6]; 
+    field {
+      name = "Reserved";
+      hw = r;
+      sw = rw;
+      reset = 0;
+    } Reserved[5:0]; 
+  } CTR_h @0x2;
+
+  reg {
+    name = "TXR_h";
+    regwidth = 8;
+    field {
+      name = "Nxt_byt";
+      hw = r;
+      sw = w;
+      reset = 0;
+    } Nxt_byt[7:1]; 
+    field {
+      name = "data_LSB";
+      hw = r;
+      sw = w;
+      reset = 0;
+    } data_LSB[0:0]; 
+  } TXR_h @0x3;
+
+  reg {
+    name = "RXR_h";
+    regwidth = 8;
+    field {
+      name = "Last_byt_rx";
+      hw = rw;
+      sw = r;
+      reset = 0x0;
+    } Last_byt_rx[7:0];
+  } RXR_h @0x3;
+
+  reg {
+    name = "CR_h";
+    regwidth = 8;
+    field {
+      name = "STA";
+      hw = r;
+      sw = w;
+      reset = 0x0;
+    } STA[7:7];
+    field {
+      name = "STO";
+      hw = r;
+      sw = w;
+      reset = 0x0;
+    } STO[6:6];
+    field {
+      name = "RD";
+      hw = r;
+      sw = w;
+      reset = 0x0;
+    } RD[5:5];
+    field {
+      name = "WR";
+      hw = r;
+      sw = w;
+      reset = 0;
+    } WR[4:4];
+    field {
+      name = "ACK";
+      hw = r;
+      sw = w;
+      reset = 0x0;
+    } ACK[3:3];
+    field {
+      name = "Reserved";
+      hw = r;
+      sw = w;
+      reset = 0x0;
+    } Reserved[2:1];
+    field {
+      name = "IACK";
+      hw = r;
+      sw = w;
+      reset = 0x0;
+    } IACK[0:0];
+  } CR_h @0x4;
+
+  reg {
+    name = "SR_h";
+    regwidth = 8;
+    field {
+      name = "RxACK";
+      hw = rw;
+      sw = r;
+      reset = 0x0;
+    } RxACK[7:7];
+    field {
+      name = "Busy";
+      hw = rw;
+      sw = r;
+      reset = 0x0;
+    } Busy[6:6];
+    field {
+      name = "AL";
+      hw = rw;
+      sw = r;
+      reset = 0x0;
+    } AL[5:5];
+    field {
+      name = "Reserved";
+      hw = rw;
+      sw = r;
+      reset = 0x0;
+    } Reserved[3:2];
+    field {
+      desc = "Transfer in progress";
+      name = "TIP";
+      hw = rw;
+      sw = r;
+      reset = 0x0;
+    } TIP[1:1];
+    field {
+      desc = "Interrupt Flag";
+      name = "IF";
+      hw = rw;
+      sw = r;
+      reset = 0x0;
+    } IF[0:0];
+  } SR_h @0x4;
+};

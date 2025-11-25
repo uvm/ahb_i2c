@@ -143,7 +143,7 @@ class reg_block__SR_h: uvm_reg {
         this.TIP = uvm_reg_field.type_id.create("TIP");
         this.TIP.configure(this, 1, 1, "RO", true,cast(uvm_reg_data_t) 0x0, 1, 1, 0);
         this.Reserved = uvm_reg_field.type_id.create("Reserved");
-        this.Reserved.configure(this, 2, 2, "RO", true,cast(uvm_reg_data_t) 0x0, 1, 1, 0);
+        this.Reserved.configure(this, 3, 2, "RO", true,cast(uvm_reg_data_t) 0x0, 1, 1, 0);
         this.AL = uvm_reg_field.type_id.create("AL");
         this.AL.configure(this, 1, 5, "RO", true,cast(uvm_reg_data_t) 0x0, 1, 1, 0);
         this.Busy = uvm_reg_field.type_id.create("Busy");

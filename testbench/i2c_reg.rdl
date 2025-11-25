@@ -28,21 +28,23 @@ addrmap reg_block {
     regwidth = 8;
     field {
       name = "EN";
+      desc = "EN, I2C core enable bit";
       hw = r;
       sw = rw;
-      reset = 0;
+      reset = 0x00;
     } EN[7:7]; 
     field {
       name = "IEN";
+      desc = "IEN, I2C core interrupt enable bit";
       hw = r;
       sw = rw;
-      reset = 0;
+      reset = 0x00;
     } IEN[6:6]; 
     field {
       name = "Reserved";
       hw = r;
       sw = rw;
-      reset = 0;
+      reset = 0x00;
     } Reserved[5:0]; 
   } CTR_h @0x2;
 
@@ -51,15 +53,16 @@ addrmap reg_block {
     regwidth = 8;
     field {
       name = "Nxt_byt";
+      desc = "Next byte to transmit via I2C";
       hw = r;
       sw = w;
-      reset = 0;
+      reset = 0x00;
     } Nxt_byt[7:1]; 
     field {
       name = "data_LSB";
       hw = r;
       sw = w;
-      reset = 0;
+      reset = 0x00;
     } data_LSB[0:0]; 
   } TXR_h @0x3;
 
@@ -70,7 +73,7 @@ addrmap reg_block {
       name = "Last_byt_rx";
       hw = rw;
       sw = r;
-      reset = 0x0;
+      reset = 0x00;
     } Last_byt_rx[7:0];
   } RXR_h @0x3;
 
@@ -79,42 +82,48 @@ addrmap reg_block {
     regwidth = 8;
     field {
       name = "STA";
+      desc = "generate (repeated) start condition";
       hw = r;
       sw = w;
-      reset = 0x0;
+      reset = 0x00;
     } STA[7:7];
     field {
       name = "STO";
+      desc = "generate stop condition";
       hw = r;
       sw = w;
-      reset = 0x0;
+      reset = 0x00;
     } STO[6:6];
     field {
       name = "RD";
+      desc = "read from slave";
       hw = r;
       sw = w;
-      reset = 0x0;
+      reset = 0x00;
     } RD[5:5];
     field {
       name = "WR";
+      desc = "write to slave";
       hw = r;
       sw = w;
-      reset = 0;
+      reset = 0x00;
     } WR[4:4];
     field {
       name = "ACK";
+      desc = "When a receiver, sent ACK (ACK = ‘0’) or NACK (ACK = ‘1’)"; 
       hw = r;
       sw = w;
-      reset = 0x0;
+      reset = 0x00;
     } ACK[3:3];
     field {
       name = "Reserved";
       hw = r;
       sw = w;
-      reset = 0x0;
+      reset = 0x00;
     } Reserved[2:1];
     field {
       name = "IACK";
+      desc = "Interrupt Acknowledge";
       hw = r;
       sw = w;
       reset = 0x0;
@@ -126,41 +135,44 @@ addrmap reg_block {
     regwidth = 8;
     field {
       name = "RxACK";
+      desc = "Received acknowledge from slave";
       hw = rw;
       sw = r;
-      reset = 0x0;
+      reset = 0x00;
     } RxACK[7:7];
     field {
       name = "Busy";
+      desc = "I2C bus busy";
       hw = rw;
       sw = r;
-      reset = 0x0;
+      reset = 0x00;
     } Busy[6:6];
     field {
       name = "AL";
+      desc ="Arbitration lost"; 
       hw = rw;
       sw = r;
-      reset = 0x0;
+      reset = 0x00;
     } AL[5:5];
     field {
       name = "Reserved";
       hw = rw;
       sw = r;
-      reset = 0x0;
-    } Reserved[3:2];
+      reset = 0x00;
+    } Reserved[4:2];
     field {
       desc = "Transfer in progress";
       name = "TIP";
       hw = rw;
       sw = r;
-      reset = 0x0;
+      reset = 0x00;
     } TIP[1:1];
     field {
       desc = "Interrupt Flag";
       name = "IF";
       hw = rw;
       sw = r;
-      reset = 0x0;
+      reset = 0x00;
     } IF[0:0];
   } SR_h @0x4;
 };
